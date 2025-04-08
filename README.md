@@ -63,6 +63,8 @@ Pivot table showing how mean number of minutes varies by the number of ingredien
 |               4 |        33.9626 |          12581 |
 |               5 |        46.0601 |          20123 |
 
+This table provides insight that there is no linear relationship between ingredients and time, so the number of ingredients might not be a perfect predictor of cooking time. Other factors such as step complexity or ingredient type likely play a major role. This table suggests we should explore other features to capture the complexity better.
+
 ### Framing a Prediction Problem
 Our project addresses a regression problem. We are predicting the total time (in minutes) it takes to prepare a recipe. This is a continuous variable, making regression the appropriate model type rather than classification. The response variable we are predicting is minutes, which represents the total time required to complete a recipe. We chose this target because it is a relevant and useful prediction for us—especially as students who don’t always have a lot of time—to estimate cooking time based on the recipe details.
 
