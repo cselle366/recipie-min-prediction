@@ -9,6 +9,25 @@ This question is valuble for both meal planning and time management, and can als
 ### Data Cleaning and Exploratory Data Analysis
 We first left merged the recipes and interactions datasets to ensure our dataset included all recipes. We filled all ratings of 0 with NaN to represent missing values. Next, we calculated the average rating for each recipe and added the series as a new column in the merged dataset. We converted string columns, such as tags, nutrition, and ingredients, into lists for feature extraction. For example, we split the ‘nutrition’ into separate attributes (e.g., calories, protein, sugar). To address missing values in the minutes column, we implemented probabilistic imputation. Specifically, we sampled from the distribution of observed minutes values and randomly assigned values to missing entries based on that distribution. This approach preserves the shape of the data and avoids biasing the model toward mean or median imputation. Finally, we removed outliers by filtering out any recipes with a preparation time of 1,000 minutes or more, ensuring that our modeling and visualization focused on more realistic cooking times.
 
+Head of our cleaned data frame: 
+|     id |   minutes |   n_steps |   n_ingredients |   calories |   sugar |   protein |
+|-------:|----------:|----------:|----------------:|-----------:|--------:|----------:|
+| 306785 |        40 |         4 |               8 |       95.3 |      50 |         5 |
+| 310237 |        30 |         9 |              10 |      143.5 |      25 |        10 |
+| 321038 |        22 |        14 |              14 |      182.4 |      50 |        11 |
+| 321038 |        22 |        14 |              14 |      182.4 |      50 |        11 |
+| 342209 |        40 |         7 |              12 |      658.2 |     151 |        24 |
+
+Pivot Table showing how mean number of minutes varies by the number of ingridients: 
+|   n_ingredients |   mean_minutes |   recipe_count |
+|----------------:|---------------:|---------------:|
+|               1 |        36.375  |             96 |
+|               2 |        50.0282 |           2273 |
+|               3 |        36.699  |           7033 |
+|               4 |        33.9626 |          12581 |
+|               5 |        46.0601 |          20123 |
+
+
 Below are some graphs that are relevant to our study.
 
 
@@ -50,3 +69,7 @@ We used Mean Squared Error (MSE) as the primary evaluation method because it is 
 Our baseline model is a linear regression model that aims to predict a recipie's cooking time based upon two features: n_ingridients and n_steps which are both quanitative. Since both features were numerical, we did not perform any encoding for this model, but we standardized the features using StandarScalar inside of an sklearn pipeline so that the model treats the features equally during training. We used the evaluation metric Mean Squared Error because it penalizes larger prediciton errors more heavily. The MSE value we got of 7619.55 squared minutes shows that our data is off by a large margin, approximately off by 87.3 minutes per recipie. This large error is due to the fact that this is a baseline model, only using two simple features, and so there is a lot to improve upon for our final model. 
 
 ### Final Model 
+To improve upon our baseline model, we added features that we thought would enhance our model's predictive power. We added three new quantitative features from the nutrition column: calories, protein, and sugar. These variables were chosen based upon their potential influence on cooking time. Recipies with higher calorie count may result in longer cooking times because the food could be more rich or dense. Similarly, higher protein suggests cooking a meat or a fish, which could increase cooking time based on the need to cook and marinate the protein. Lastly, high sugar content could suggest a dessert or baked good, which might take longer due to the baking time. These features were added because they show how the nutritional complexity of a recipie could affect its cooking time. 
+
+We used a RandomForestRegressor, a non-linear moethod that as part of our research, we saw can properly handle complex relationships between features. So with the following features: n_ingridients, n_steps, calories, protein, and sugar, we standardized the data with StandardScalar and implemented a pipeline in sklearn. There were no qualitative features, so we did not use encoding. 
+
