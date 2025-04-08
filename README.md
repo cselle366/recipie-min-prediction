@@ -52,6 +52,7 @@ Below are some graphs that are relevant to our study.
  ></iframe>
  Average Number of Steps by Number of Ingridients explores how the number of ingridients affects the number of steps of a recipie. The chart shows a general upwards trend where recipies with more ingridients tend to have more steps, so there is a direct relationship between number of ingridients and number of steps. 
 
+
  Pivot Table showing how mean number of minutes varies by the number of ingridients: 
 
 |   n_ingredients |   mean_minutes |   recipe_count |
