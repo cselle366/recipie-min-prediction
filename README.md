@@ -19,21 +19,21 @@ Box Plot of Recipie Minutes explores the distribution of average minutes each re
  height="400"
  frameborder="0"
  ></iframe>
-Box Plot of Recipie Steps explores the distribution of average number of steps each recipie takes. 
+Box Plot of Recipie Steps explores the distribution of average number of steps each recipie takes. The box plot shows that most recipies are completed between 8 - 19 steps, with a mean of about 15 steps. However, there are some recipies that take up to 37 steps, so most of the recipies take an intermediate amount of steps. 
  <iframe
  src="univariate2.html"
  width="600"
  height="400"
  frameborder="0"
  ></iframe>
-Average Minutes by Number of Ingridients explores how the number of ingridients affects the cooking time of a recipie. 
+Average Minutes by Number of Ingridients explores how the number of ingridients affects the cooking time of a recipie. The chart shows a general upwards trend where as the number of ingridients increases, the average number of minutes the recipies will take also increases showing a direct relationship between number of ingridients and cooking time. 
  <iframe
  src="bivariate1.html"
  width="600"
  height="400"
  frameborder="0"
  ></iframe>
-Average Number of Steps by Number of Ingridients explores how the number of ingridients affects the number of steps of a recipie.
+Average Number of Steps by Number of Ingridients explores how the number of ingridients affects the number of steps of a recipie. The chart shows a general upwards trend where recipies with more ingridients tend to have more steps, so there is a direct relationship between number of ingridients and number of steps. 
  <iframe
  src="bivariate2.html"
  width="600"
