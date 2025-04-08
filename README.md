@@ -10,6 +10,7 @@ This question is valuble for both meal planning and time management, and can als
 We first left merged the recipes and interactions datasets to ensure our dataset included all recipes. We filled all ratings of 0 with NaN to represent missing values. Next, we calculated the average rating for each recipe and added the series as a new column in the merged dataset. We converted string columns, such as tags, nutrition, and ingredients, into lists for feature extraction. For example, we split the ‘nutrition’ into separate attributes (e.g., calories, protein, sugar). To address missing values in the minutes column, we implemented probabilistic imputation. Specifically, we sampled from the distribution of observed minutes values and randomly assigned values to missing entries based on that distribution. This approach preserves the shape of the data and avoids biasing the model toward mean or median imputation. Finally, we removed outliers by filtering out any recipes with a preparation time of 1,000 minutes or more, ensuring that our modeling and visualization focused on more realistic cooking times.
 
 Head of our cleaned data frame: 
+
 |     id |   minutes |   n_steps |   n_ingredients |   calories |   sugar |   protein |
 |-------:|----------:|----------:|----------------:|-----------:|--------:|----------:|
 | 306785 |        40 |         4 |               8 |       95.3 |      50 |         5 |
@@ -19,6 +20,7 @@ Head of our cleaned data frame:
 | 342209 |        40 |         7 |              12 |      658.2 |     151 |        24 |
 
 Pivot Table showing how mean number of minutes varies by the number of ingridients: 
+
 |   n_ingredients |   mean_minutes |   recipe_count |
 |----------------:|---------------:|---------------:|
 |               1 |        36.375  |             96 |
@@ -71,5 +73,5 @@ Our baseline model is a linear regression model that aims to predict a recipie's
 ### Final Model 
 To improve upon our baseline model, we added features that we thought would enhance our model's predictive power. We added three new quantitative features from the nutrition column: calories, protein, and sugar. These variables were chosen based upon their potential influence on cooking time. Recipies with higher calorie count may result in longer cooking times because the food could be more rich or dense. Similarly, higher protein suggests cooking a meat or a fish, which could increase cooking time based on the need to cook and marinate the protein. Lastly, high sugar content could suggest a dessert or baked good, which might take longer due to the baking time. These features were added because they show how the nutritional complexity of a recipie could affect its cooking time. 
 
-We used a RandomForestRegressor, a non-linear moethod that as part of our research, we saw can properly handle complex relationships between features. So with the following features: n_ingridients, n_steps, calories, protein, and sugar, we standardized the data with StandardScalar and implemented a pipeline in sklearn. There were no qualitative features, so we did not use encoding. 
+We used a RandomForestRegressor, a non-linear moethod that can properly handle complex relationships between features. Our final set included: n_ingridients, n_steps, calories, protein, and sugar. Since there were no qualitative features, so we did not use encoding.   we standardized the data with StandardScalar and implemented a pipeline in sklearn. 
 
