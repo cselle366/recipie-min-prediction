@@ -20,22 +20,22 @@ Box Plot of Recipie Minutes explores the distribution of average minutes each re
 Box Plot of Recipie Steps explores the distribution of average number of steps each recipie takes. 
  <iframe
  src="univariate2.html"
- width="800"
- height="600"
+ width="600"
+ height="400"
  frameborder="0"
  ></iframe>
 Average Minutes by Number of Ingridients explores how the number of ingridients affects the cooking time of a recipie. 
  <iframe
  src="bivariate1.html"
- width="800"
- height="600"
+ width="600"
+ height="400"
  frameborder="0"
  ></iframe>
 Average Number of Steps by Number of Ingridients explores how the number of ingridients affects the number of steps of a recipie.
  <iframe
  src="bivariate2.html"
- width="800"
- height="600"
+ width="600"
+ height="400"
  frameborder="0"
  ></iframe>
  
