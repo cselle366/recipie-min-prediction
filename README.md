@@ -19,16 +19,6 @@ Head of our cleaned data frame:
 | 321038 |        22 |        14 |              14 |      182.4 |      50 |        11 |
 | 342209 |        40 |         7 |              12 |      658.2 |     151 |        24 |
 
-Pivot Table showing how mean number of minutes varies by the number of ingridients: 
-
-|   n_ingredients |   mean_minutes |   recipe_count |
-|----------------:|---------------:|---------------:|
-|               1 |        36.375  |             96 |
-|               2 |        50.0282 |           2273 |
-|               3 |        36.699  |           7033 |
-|               4 |        33.9626 |          12581 |
-|               5 |        46.0601 |          20123 |
-
 
 Below are some graphs that are relevant to our study.
 
@@ -61,7 +51,17 @@ Below are some graphs that are relevant to our study.
  frameborder="0"
  ></iframe>
  Average Number of Steps by Number of Ingridients explores how the number of ingridients affects the number of steps of a recipie. The chart shows a general upwards trend where recipies with more ingridients tend to have more steps, so there is a direct relationship between number of ingridients and number of steps. 
- 
+
+ Pivot Table showing how mean number of minutes varies by the number of ingridients: 
+
+|   n_ingredients |   mean_minutes |   recipe_count |
+|----------------:|---------------:|---------------:|
+|               1 |        36.375  |             96 |
+|               2 |        50.0282 |           2273 |
+|               3 |        36.699  |           7033 |
+|               4 |        33.9626 |          12581 |
+|               5 |        46.0601 |          20123 |
+
 ### Framing a Prediction Problem
 Our project addresses a regression problem. We are predicting the total time (in minutes) it takes to prepare a recipe. This is a continuous variable, making regression the appropriate model type rather than classification. The response variable we are predicting is minutes, which represents the total time required to complete a recipe. We chose this target because it is a relevant and useful prediction for us, especially as students who don’t always have a lot of time, to estimate cooking time based on the recipe details. 
 We used Mean Squared Error (MSE) as the primary evaluation method because it is standard for regression tasks and effectively penalizes larger errors more than smaller ones. We considered columns such as “n_ingredients” and “n_steps” to train the model, both of which are features that we would know before the time of prediction, which is important for constructing the prediction model. 
@@ -73,5 +73,7 @@ Our baseline model is a linear regression model that aims to predict a recipie's
 ### Final Model 
 To improve upon our baseline model, we added features that we thought would enhance our model's predictive power. We added three new quantitative features from the nutrition column: calories, protein, and sugar. These variables were chosen based upon their potential influence on cooking time. Recipies with higher calorie count may result in longer cooking times because the food could be more rich or dense. Similarly, higher protein suggests cooking a meat or a fish, which could increase cooking time based on the need to cook and marinate the protein. Lastly, high sugar content could suggest a dessert or baked good, which might take longer due to the baking time. These features were added because they show how the nutritional complexity of a recipie could affect its cooking time. 
 
-We used a RandomForestRegressor, a non-linear moethod that can properly handle complex relationships between features. Our final set included: n_ingridients, n_steps, calories, protein, and sugar. Since there were no qualitative features, so we did not use encoding.   we standardized the data with StandardScalar and implemented a pipeline in sklearn. 
+We used a RandomForestRegressor, a non-linear moethod that can properly handle complex relationships between features. Our final set included: n_ingridients, n_steps, calories, protein, and sugar. Since there were no qualitative features, we did not use encoding. However, we did standardize the data with StandardScalar and implemented a pipeline in sklearn to ensure clean preprocessing. 
+
+Then, we used GridSearchCV with 3-fold cross-validation to search over two important hyperparameters: n_estimators and max_depth. We tested n_estimators with values of 50 and 100, and max_depth with values of 5, 10, and None. The best combination with the highest performace found was when n_estimators = 100 and max_depth = None. The final model has a Mean Squared Error of 1180.44 squared minutes which is a huge improvement from the baseline model. 
 
