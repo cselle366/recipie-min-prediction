@@ -81,14 +81,14 @@ We used a RandomForestRegressor, a non-linear method that can properly handle co
 Then, we used GridSearchCV to search over two important hyperparameters: n_estimators and max_depth. We tested n_estimators with values of 50 and 100, and max_depth with values of 5, 10, and None. The best combination with the highest performance was found when n_estimators = 100 and max_depth = None. The final model has a Mean Squared Error of 1180.44 squared minutes, which is a huge improvement from the baseline model. The final model is off by an average of 34.4 minutes per recipe, which is a significant improvement over the baseline model’s error. Therefore, the final model is significantly more accurate than the baseline model. This is likely due to the final model's added features that reflect real differences in recipe complexity.
 
 To visualize our model's performance, we created a plot of the actual versus predicted cooking times. This visualization shows that most predictions fall close to the actual values, meaning that our model effectively captures the trends in the data.
-
-This scatter plot compares the actual versus the predicted cooking times, showing that while predictions generally follow the overall trend, it is less accurate for super short or super long cooking times.  
+  
 <iframe
  src="prediction.html"
  width="600"
  height="400"
  frameborder="0"
  ></iframe>
+ This scatter plot compares the actual versus the predicted cooking times, showing that while predictions generally follow the overall trend, it is less accurate for super short or super long cooking times.
 
 
 
