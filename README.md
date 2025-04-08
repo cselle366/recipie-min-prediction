@@ -76,5 +76,10 @@ To improve upon our baseline model, we added features that we thought would enha
 
 We used a RandomForestRegressor, a non-linear moethod that can properly handle complex relationships between features. Our final set included: n_ingridients, n_steps, calories, protein, and sugar. Since there were no qualitative features, we did not use encoding. However, we did standardize the data with StandardScalar and implemented a pipeline in sklearn to ensure clean preprocessing. 
 
-Then, we used GridSearchCV with 3-fold cross-validation to search over two important hyperparameters: n_estimators and max_depth. We tested n_estimators with values of 50 and 100, and max_depth with values of 5, 10, and None. The best combination with the highest performace found was when n_estimators = 100 and max_depth = None. The final model has a Mean Squared Error of 1180.44 squared minutes which is a huge improvement from the baseline model. 
+Then, we used GridSearchCV with 3-fold cross-validation to search over two important hyperparameters: n_estimators and max_depth. We tested n_estimators with values of 50 and 100, and max_depth with values of 5, 10, and None. The best combination with the highest performace found was when n_estimators = 100 and max_depth = None. The final model has a Mean Squared Error of 1180.44 squared minutes which is a huge improvement from the baseline model. The final model is off by on average 34.4 minutes per recipie, which is a significant improvement over the baseline model’s error. Therefore, the final model is significantly more accurate than the baseline model. This is likely due to the final model's added featires that show real differences in recipie complexity. 
+
+In order to show our model's performance, we created a plot of the actual versus predicted cooking times. This model shows that most predictions do fall close to the actual value, meaning that our model effectively captures the trends in the data. 
+
+
+
 
