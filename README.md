@@ -12,34 +12,34 @@ We first left merged the recipes and interactions datasets to ensure our dataset
 Below are some graphs that are relevant to our study.
 
 
-Box Plot of Recipie Minutes explores the distribution of average minutes each recipie takes. The box plot shows that most recipies take in between about 56 - 106 minutes with a mean of around 80 minutes. There are also a few outliers around 240 minutes, so there is a wide range of recipie times. 
 <iframe
  src="univariate1.html"
  width="600"
  height="400"
  frameborder="0"
  ></iframe>
-Box Plot of Recipie Steps explores the distribution of average number of steps each recipie takes. The box plot shows that most recipies are completed between 8 - 19 steps, with a mean of about 15 steps. However, there are some recipies that take up to 37 steps, so most of the recipies take an intermediate amount of steps. 
+ Box Plot of Recipie Minutes explores the distribution of average minutes each recipie takes. The box plot shows that most recipies take in between about 56 - 106 minutes with a mean of around 80 minutes. There are also a few outliers around 240 minutes, so there is a wide range of recipie times. 
  <iframe
  src="univariate2.html"
  width="600"
  height="400"
  frameborder="0"
  ></iframe>
-Average Minutes by Number of Ingridients explores how the number of ingridients affects the cooking time of a recipie. The chart shows a general upwards trend where as the number of ingridients increases, the average number of minutes the recipies will take also increases showing a direct relationship between number of ingridients and cooking time. 
+ Box Plot of Recipie Steps explores the distribution of average number of steps each recipie takes. The box plot shows that most recipies are completed between 8 - 19 steps, with a mean of about 15 steps. However, there are some recipies that take up to 37 steps, so most of the recipies take an intermediate amount of steps. 
  <iframe
  src="bivariate1.html"
  width="600"
  height="400"
  frameborder="0"
  ></iframe>
-Average Number of Steps by Number of Ingridients explores how the number of ingridients affects the number of steps of a recipie. The chart shows a general upwards trend where recipies with more ingridients tend to have more steps, so there is a direct relationship between number of ingridients and number of steps. 
+ Average Minutes by Number of Ingridients explores how the number of ingridients affects the cooking time of a recipie. The chart shows a general upwards trend where as the number of ingridients increases, the average number of minutes the recipies will take also increases showing a direct relationship between number of ingridients and cooking time. 
  <iframe
  src="bivariate2.html"
  width="600"
  height="400"
  frameborder="0"
  ></iframe>
+ Average Number of Steps by Number of Ingridients explores how the number of ingridients affects the number of steps of a recipie. The chart shows a general upwards trend where recipies with more ingridients tend to have more steps, so there is a direct relationship between number of ingridients and number of steps. 
  
 ### Framing a Prediction Problem
 
