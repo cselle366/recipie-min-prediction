@@ -9,6 +9,15 @@ This question is valuble for both meal planning and time management, and can als
 ### Data Cleaning and Exploratory Data Analysis
 We first left merged the recipes and interactions datasets to ensure our dataset included all recipes. We filled all ratings of 0 with NaN to represent missing values. Next, we calculated the average rating for each recipe and added the series as a new column in the merged dataset. We converted string columns, such as tags, nutrition, and ingredients, into lists for feature extraction. For example, we split the ‘nutrition’ into separate attributes (e.g., calories, protein, sugar). To address missing values in the minutes column, we implemented probabilistic imputation. Specifically, we sampled from the distribution of observed minutes values and randomly assigned values to missing entries based on that distribution. This approach preserves the shape of the data and avoids biasing the model toward mean or median imputation. Finally, we removed outliers by filtering out any recipes with a preparation time of 1,000 minutes or more, ensuring that our modeling and visualization focused on more realistic cooking times.
 
+Below are some graphs that are relevant to 
+
+ <iframe
+ src="bivariate1.html"
+ width="800"
+ height="600"
+ frameborder="0"
+ ></iframe>
+ 
 ### Framing a Prediction Problem
 
 ### Baseline Model
