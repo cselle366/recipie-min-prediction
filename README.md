@@ -13,8 +13,8 @@ Below are some graphs that are relevant to our study.
 Box Plot of Recipie Minutes explores the distribution of average minutes each recipie takes. 
 <iframe
  src="univariate1.html"
- width="800"
- height="600"
+ width="600"
+ height="400"
  frameborder="0"
  ></iframe>
 Box Plot of Recipie Steps explores the distribution of average number of steps each recipie takes. 
