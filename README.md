@@ -57,7 +57,7 @@ Head of our cleaned data frame:
  Average Number of Steps by Number of Ingredients explores how the number of ingredients affects the number of steps in a recipe. The chart shows a general upward trend where recipes with more ingredients tend to have more steps, indicating a direct relationship between the number of ingredients and number of steps.
 
 
-#### Grouping and Aggregates 
+### Grouping and Aggregates 
 Pivot table showing how mean number of minutes varies by the number of ingredients:
 
 |   n_ingredients |   mean_minutes |   recipe_count |
