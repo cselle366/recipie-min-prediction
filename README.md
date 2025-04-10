@@ -7,6 +7,7 @@ We chose to explore the Recipes and Ratings dataset from Food.com, which contain
 This question is valuable for both meal planning and time management, and can also help users find recipes based on preferred cooking time. The dataset contains 731,927 rows, and relevant columns to our study include: minutes, nutrition, n_steps, and n_ingredients. We utilized these columns in order to transform the data into individual features such as calories, protein, and sugar. By building this predictive model, we strive to capture the complexity of real-world recipes and investigate the factors affecting cooking time.
 
 ## Data Cleaning and Exploratory Data Analysis
+### Cleaning 
 We first left-merged the recipes and interactions datasets to ensure our dataset included all recipes. We filled all ratings of 0 with NaN to represent missing values. Next, we calculated the average rating for each recipe and added the series as a new column in the merged dataset. We converted string columns, such as tags, nutrition, and ingredients, into lists for feature extraction. For example, we split the ‘nutrition’ column into separate attributes (e.g., calories, protein, sugar). To address missing values in the minutes column, we implemented probabilistic imputation. Specifically, we sampled from the distribution of observed minutes values and randomly assigned values to missing entries based on that distribution. This approach preserves the shape of the data and avoids biasing the model toward mean or median imputation. Finally, we removed outliers by filtering out any recipes with a preparation time of 1,000 minutes or more, ensuring that our modeling and visualization focused on more realistic cooking times.
 
 Head of our cleaned data frame:
@@ -20,8 +21,8 @@ Head of our cleaned data frame:
 | 342209 |        40 |         7 |              12 |      658.2 |     151 |        24 |
 
 
-Below are some graphs that are relevant to our study.
-
+### Exploratory Data Analysis
+#### Univariate Analysis
 
 <iframe
  src="univariate1.html"
@@ -37,6 +38,9 @@ Below are some graphs that are relevant to our study.
  frameborder="0"
  ></iframe>
  Box Plot of Recipe Steps explores the distribution of the average number of steps each recipe takes. The box plot shows that most recipes are completed in 8–19 steps, with a mean of about 15 steps. However, some recipes take up to 37 steps, indicating that most recipes take a moderate number of steps. 
+
+#### Bivariate Analysis
+ 
  <iframe
  src="bivariate1.html"
  width="600"
@@ -52,7 +56,8 @@ Below are some graphs that are relevant to our study.
  ></iframe>
  Average Number of Steps by Number of Ingredients explores how the number of ingredients affects the number of steps in a recipe. The chart shows a general upward trend where recipes with more ingredients tend to have more steps, indicating a direct relationship between the number of ingredients and number of steps.
 
- 
+
+#### Grouping and Aggregates 
 Pivot table showing how mean number of minutes varies by the number of ingredients:
 
 |   n_ingredients |   mean_minutes |   recipe_count |
