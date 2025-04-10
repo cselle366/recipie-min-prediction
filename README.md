@@ -92,10 +92,13 @@ To improve upon our baseline model, we added features that we thought would enha
 
 These features were added because they show how the nutritional complexity of a recipe could affect its cooking time.
 
+### Feature Engineering 
 We used a RandomForestRegressor, a non-linear method that can properly handle complex relationships between features. Our final feature set included: n_ingredients, n_steps, calories, protein, and sugar. Since there were no qualitative features, we did not use encoding. However, we did standardize the data with StandardScaler and implemented a pipeline in sklearn to ensure clean preprocessing.
 
+### Algorithm and Hyperparameter 
 Then, we used GridSearchCV to search over two important hyperparameters: n_estimators and max_depth. We tested n_estimators with values of 50 and 100, and max_depth with values of 5, 10, and None. The best combination with the highest performance was found when n_estimators = 100 and max_depth = None. The final model has a Mean Squared Error of 1180.44 squared minutes, which is a huge improvement from the baseline model. The final model is off by an average of 34.4 minutes per recipe, which is a significant improvement over the baseline model’s error. Therefore, the final model is significantly more accurate than the baseline model. This is likely due to the final model's added features that reflect real differences in recipe complexity.
 
+### Model Performance 
 To visualize our model's performance, we created a plot of the actual versus predicted cooking times. This visualization shows that most predictions fall close to the actual values, meaning that our model effectively captures the trends in the data.
   
 <iframe
