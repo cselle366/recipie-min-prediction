@@ -83,9 +83,14 @@ Our baseline model is a linear regression model that aims to predict a recipe's 
 ## Final Model 
 ### New Features
 To improve upon our baseline model, we added features that we thought would enhance our model's predictive power. We added three new quantitative features from the nutrition column that were chosen based on their potential influence on cooking time: 
-'calories'
-protein
-sugar These variables . Recipes with higher calorie counts may result in longer cooking times because the food could be more rich or dense. Similarly, higher protein suggests cooking meat or fish, which could increase cooking time due to the need to cook and marinate the protein. Lastly, high sugar content could suggest a dessert or baked good, which might take longer due to the baking time. These features were added because they show how the nutritional complexity of a recipe could affect its cooking time.
+
+'calories': Recipes with higher calorie counts may result in longer cooking times because the food could be more rich or dense.
+
+'protein': Higher protein suggests cooking meat or fish, which could increase cooking time due to the need to cook and marinate the protein.
+
+'sugar': high sugar content could suggest a dessert or baked good, which might take longer due to the baking time. 
+
+These features were added because they show how the nutritional complexity of a recipe could affect its cooking time.
 
 We used a RandomForestRegressor, a non-linear method that can properly handle complex relationships between features. Our final feature set included: n_ingredients, n_steps, calories, protein, and sugar. Since there were no qualitative features, we did not use encoding. However, we did standardize the data with StandardScaler and implemented a pipeline in sklearn to ensure clean preprocessing.
 
