@@ -1,4 +1,4 @@
-# Predicting Cooking Time Based on Different Recipie Features 
+# Predicting Cooking Time Based on Different Recipe Features 
 ## By: Annice Chang and Courtney Selle
 ## Introduction 
 We chose to explore the Recipes and Ratings dataset from Food.com, which contains thousands of recipes and all of the data pertaining to the recipes. As students, we prioritize cooking time when it comes to our meals, so we were particularly interested in what factors affect the amount of time a recipe takes to make. Our central question is as follows:
